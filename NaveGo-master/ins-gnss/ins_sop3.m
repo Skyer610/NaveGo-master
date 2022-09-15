@@ -311,7 +311,6 @@ for i = 2:LI
         
         % Meridian and normal radii of curvature update
         [RM,RN] = radius(lat_e(i));
-        temp = gdx_s;
         % Radians-to-meters matrix
         Tpr = diag([(RM + h_e(i)), (RN + h_e(i)) * cos(lat_e(i)), -1]);
         
@@ -351,7 +350,7 @@ for i = 2:LI
                     Hv = zeros(3,15);
                     Hs = zeros(3,6);
                         for i_H = 1:3
-                            l_sop = [(RM + h_e(i))*(sop.lat(gdx_s,i_H)-lat_e(i)+xi(7)) ,(RN + h_e(i)) * cos(lat_e(i))*(sop.lon(gdx_s,i_H)-lon_e(i)+xi(8)), (sop.h(gdx_s,i_H)-h_e(i)+xi(9))];
+                            l_sop = [(RM + h_e(i))*(sop.lat(gdx_s,i_H)-lat_e(i)+xi(7)) ,(RN + h_e(i)) * cos(lat_e(i))*(sop.lon(gdx_s,i_H)-lon_e(i)+xi(8)), -(sop.h(gdx_s,i_H)-h_e(i)+xi(9))];
                             l_sop = l_sop / norm(l_sop);
                             Hv(i_H,:) = [O16 l_sop O16];
                             Hs(i_H,i_H*2-1:i_H*2) = [1 0];

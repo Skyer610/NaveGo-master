@@ -60,9 +60,9 @@ for i = 1:LS
     sop.lon(i,1:3) = psop(1:3,1)';
     sop.lat(i,1:3) = psop(1:3,2)';
     sop.h(i,1:3) = psop(1:3,3)';
-    sop.dis(i,1) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,1)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,1)))^2 + (refs(i,3)-sop.h(i,1))^2)+0*rand(1);
-    sop.dis(i,2) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,2)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,2)))^2 + (refs(i,3)-sop.h(i,2))^2)+0*rand(1);
-    sop.dis(i,3) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,3)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,3)))^2 + (refs(i,3)-sop.h(i,3))^2)+0*rand(1);
+    sop.dis(i,1) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,1)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,1)))^2 + (refs(i,3)-sop.h(i,1))^2)+10*rand(1);
+    sop.dis(i,2) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,2)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,2)))^2 + (refs(i,3)-sop.h(i,2))^2)+10*rand(1);
+    sop.dis(i,3) = sqrt( (lontometer*(refs(i,1)-sop.lon(i,3)))^2 + ( lattometer *(refs(i,2)-sop.lat(i,3)))^2 + (refs(i,3)-sop.h(i,3))^2)+10*rand(1);
 end
 sop.std = [10 10 10];
 sop.eps = 0.0025;

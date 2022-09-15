@@ -190,7 +190,7 @@ G = [DCMbn Z     Z   Z ;
     Z      Z     Z   Fba ;
     ];
 
-    clk = [1 0.1;
+    clk = [1 0.0025;
          0  1];
     Fn = zeros(21,21);
     Gn = zeros(21,12);
